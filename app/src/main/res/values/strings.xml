@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">DepressionTest</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TEST one -->
+    <string name="one_answer_first">I don\'t feel upset or sad.</string>
+    <string name="one_answer_second">I\'m upset.</string>
+    <string name="one_answer_third">I\'m always upset and can\'t switch off.</string>
+    <string name="one_answer_fourth">I\'m so upset and unhappy that I can\'t bear it.</string>
+
+    <!-- TEST two -->
+    <string name="two_answer_first">I\'m not worried about my future.</string>
+    <string name="two_answer_second">I feel concerned about the future.</string>
+    <string name="two_answer_third">I feel that nothing awaits me in the future.</string>
+    <string name="two_answer_fourth">My future is hopeless, and nothing can change for the better.</string>
+
+    <!-- TEST three -->
+    <string name="three_answer_first">I don\'t feel like a failure.</string>
+    <string name="three_answer_second">I feel like I\'ve endured more failures than other people.</string>
+    <string name="three_answer_third">When I look back at my life, I see a lot of failures in it.</string>
+    <string name="three_answer_fourth">I feel like as a person I\'m a complete failure.</string>
+
+    <!-- TEST four -->
+    <string name="four_answer_first">I derive as much satisfaction from life as before.</string>
+    <string name="four_answer_second">I don\'t derive as much satisfaction from life as before.</string>
+    <string name="four_answer_third">I no longer derive satisfaction from anything.</string>
+    <string name="four_answer_fourth">I\'m completely dissatisfied with life, and everything has become tedious to me.</string>
+
+    <!-- TEST five -->
+    <string name="five_answer_first">I don\'t feel guilty about anything.</string>
+    <string name="five_answer_second">I feel guilty quite often.</string>
+    <string name="five_answer_third">Most of the time, I feel guilty.</string>
+    <string name="five_answer_fourth">I constantly experience a sense of guilt.</string>
+
+    <!-- TEST six -->
+    <string name="six_answer_first">I don\'t feel that I could be punished for anything.</string>
+    <string name="six_answer_second">I feel that I could be punished.</string>
+    <string name="six_answer_third">I expect that I could be punished.</string>
+    <string name="six_answer_fourth">I feel as though I\'ve already been punished.</string>
+
+    <!-- TEST seven -->
+    <string name="seven_answer_first">I\'ve never thought about ending my life.</string>
+    <string name="seven_answer_second">Thoughts of ending my life come to me, but I won\'t act on them.</string>
+    <string name="seven_answer_third">I\'d like to end my life.</string>
+    <string name="seven_answer_fourth">I\'d kill myself if the opportunity presented itself.</string>
+
+    <!-- TEST eight -->
+    <string name="eight_answer_first">I don\'t cry any more than usual.</string>
+    <string name="eight_answer_second">I cry more often now than before.</string>
+    <string name="eight_answer_third">Now, I cry all the time.</string>
+    <string name="eight_answer_fourth">Before, I could cry, but now I can\'t even if I want to.</string>
+
+    <!-- TEST nine -->
+    <string name="nine_answer_first">I don\'t think about ending my life</string>
+    <string name="nine_answer_second">I have thoughts of killing myself, but I won\'t do it</string>
+    <string name="nine_answer_third">I would like to kill myself</string>
+    <string name="nine_answer_fourth">I would kill myself if I had the chance</string>
+
+    <!-- TEST ten -->
+    <string name="ten_answer_first">I cry no more than usual</string>
+    <string name="ten_answer_second">I cry more often than before</string>
+    <string name="ten_answer_third">Now I cry all the time</string>
+    <string name="ten_answer_fourth">I used to be able to cry, but now I can\'t even if I want to</string>
+
+    <!-- TEST eleven -->
+    <string name="eleven_answer_first">I am no more irritable than usual</string>
+    <string name="eleven_answer_second">I am more irritable than usual</string>
+    <string name="eleven_answer_third">I feel constantly irritable</string>
+    <string name="eleven_answer_fourth">I am indifferent to things that used to irritate me</string>
+
+    <!-- TEST twelve -->
+    <string name="twelve_answer_first">I have not lost interest in other people</string>
+    <string name="twelve_answer_second">I am less interested in other people than before</string>
+    <string name="twelve_answer_third">I have almost lost interest in other people</string>
+    <string name="twelve_answer_fourth">I have completely lost interest in other people</string>
+
+    <!-- TEST thirteen -->
+    <string name="thirteen_answer_first">I delay making decisions sometimes, like before</string>
+    <string name="thirteen_answer_second">I postpone making decisions more often than before</string>
+    <string name="thirteen_answer_third">It is harder for me to make decisions than before</string>
+    <string name="thirteen_answer_fourth">I cannot make any decisions anymore</string>
+
+    <!-- TEST fourteen -->
+    <string name="fourteen_answer_first">I do not feel that I look worse than usual</string>
+    <string name="fourteen_answer_second">I am worried that I look old and unattractive</string>
+    <string name="fourteen_answer_third">I know that there have been significant changes in my appearance that make me unattractive</string>
+    <string name="fourteen_answer_fourth">I know that I look ugly.</string>
+
+    <!-- TEST fifteen -->
+    <string name="fifteen_answer_first">I can work just as well as before</string>
+    <string name="fifteen_answer_second">I need to make an extra effort to start doing something</string>
+    <string name="fifteen_answer_third">I find it difficult to make myself do anything</string>
+    <string name="fifteen_answer_fourth">I cannot perform any work at all</string>
+
+    <!-- TEST sixteen -->
+    <string name="sixteen_answer_first">I sleep just as well as before</string>
+    <string name="sixteen_answer_second">Now I sleep worse than before</string>
+    <string name="sixteen_answer_third">I wake up 1–2 hours earlier, and it\'s hard for me to fall asleep again</string>
+    <string name="sixteen_answer_fourth">I wake up several hours earlier than usual and cannot fall asleep anymore</string>
+
+    <!-- TEST seventeen -->
+    <string name="seventeen_answer_first">I am no more tired than usual</string>
+    <string name="seventeen_answer_second">Now I get tired faster than before</string>
+    <string name="seventeen_answer_third">I get tired from almost everything I do</string>
+    <string name="seventeen_answer_fourth">I cannot do anything due to fatigue</string>
+
+    <!-- TEST eighteen -->
+    <string name="eighteen_answer_first">My appetite is no worse than usual</string>
+    <string name="eighteen_answer_second">My appetite has worsened compared to before</string>
+    <string name="eighteen_answer_third">My appetite is now significantly worse</string>
+    <string name="eighteen_answer_fourth">I have no appetite at all</string>
+
+    <!-- TEST nineteen -->
+    <string name="nineteen_answer_first">I am not more concerned about my health than usual</string>
+    <string name="nineteen_answer_second">I am worried about problems with my physical health, such as pain, stomach upset, constipation, etc.</string>
+    <string name="nineteen_answer_third">I am very concerned about my physical state…</string>
+    <string name="nineteen_answer_fourth">I am so worried about my physical condition that I can\'t think about anything else</string>
+
+    <!-- TEST twenty -->
+    <string name="twenty_answer_first">Lately, I have not noticed any changes in my interest in sex.</string>
+    <string name="twenty_answer_second">I am less concerned about sexual issues than before.</string>
+    <string name="twenty_answer_third">I am significantly less interested in sexual problems than before.</string>
+    <string name="twenty_answer_fourth">I have completely lost my sexual interest.</string>
+
+</resources>
