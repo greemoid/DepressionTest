@@ -29,8 +29,9 @@ class ConclusionFragment : Fragment() {
 
         val sum = arguments?.getInt("sum", 0) ?: 0
 
+        binding.tvScore.text = requireContext().getString(R.string.points, sum, 80)
 
-        binding.textviewSecond.text = when(sum) {
+        binding.tvConclusion.text = when(sum) {
             in 0..30 -> requireContext().getString(R.string.twenty_thirty)
             in 31..38 -> requireContext().getString(R.string.thirtyone_thirtyeight)
             in 39..50 -> requireContext().getString(R.string.thirtynine_fifty)
@@ -39,7 +40,7 @@ class ConclusionFragment : Fragment() {
             else -> requireContext().getString(R.string.twenty_thirty)
         }
 
-        binding.buttonSecond.setOnClickListener {
+        binding.btnHome.setOnClickListener {
             findNavController().navigate(R.id.action_conclusionFragment_to_introFragment)
         }
     }

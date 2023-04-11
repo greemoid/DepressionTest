@@ -8,22 +8,18 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.depressiontest.databinding.FragmentTestBinding
+import com.google.android.material.snackbar.Snackbar
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
+
 class TestFragment : Fragment() {
 
     private var _binding: FragmentTestBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
 
         _binding = FragmentTestBinding.inflate(inflater, container, false)
         return binding.root
@@ -170,9 +166,10 @@ class TestFragment : Fragment() {
 
         // Set up the initial model
         setModel(testModels[currentModelIndex])
-        binding.textviewFirst.text = "${currentModelIndex + 1} / ${testModels.size}"
+        binding.tvNumber.text = requireContext().getString(R.string.number, currentModelIndex + 1, testModels.size)//"${currentModelIndex + 1} / ${testModels.size}"
 
-        binding.buttonFirst.setOnClickListener {
+
+        binding.btnNext.setOnClickListener {
             binding.apply {
 
                 val checked =
@@ -201,19 +198,24 @@ class TestFragment : Fragment() {
                 // switch to the next model or finish the test
                 if (checked) {
                     if (currentModelIndex < testModels.size - 1) {
+                        // If there are more questions, move to the next one
                         currentModelIndex++
-                        binding.buttonFirst.text = "Next"
-                        textviewFirst.text = "${currentModelIndex + 1} / ${testModels.size}"
+                        binding.btnNext.text = requireContext().getString(R.string.next)
+                        tvNumber.text = requireContext().getString(R.string.number, currentModelIndex + 1, testModels.size)//"${currentModelIndex + 1} / ${testModels.size}"
                         setModel(testModels[currentModelIndex])
                     } else {
+                        // If this is the last question, finish the test
                         finishTest()
-                        binding.buttonFirst.text = "Finish"
+                        binding.btnNext.text = requireContext().getString(R.string.finish)
                     }
                 } else {
-                    Toast.makeText(requireContext(), "Check something", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(
+                        requireContext(),
+                        requireView(),
+                        "You have not selected anything",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
                 }
-
-
             }
         }
     }
@@ -232,7 +234,7 @@ class TestFragment : Fragment() {
     // Finish the test and show the results
     private fun finishTest() {
         // perform the necessary actions to finish the test and show the results
-        binding.buttonFirst.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             val bundle = Bundle().apply {
                 putInt("sum", sum)
             }

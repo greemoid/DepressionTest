@@ -1,16 +1,18 @@
 <resources>
-    <string name="app_name">DepressionTest</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name" translatable="false">DepressionTest</string>
+    <string name="action_settings" translatable="false">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="finish">Finish</string>
+    <string name="number" translatable="false">%d/%d</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <!-- TEST one -->
     <string name="one_answer_first">I don\'t feel upset or sad.</string>
@@ -70,7 +72,7 @@
     <string name="ten_answer_first">I cry no more than usual</string>
     <string name="ten_answer_second">I cry more often than before</string>
     <string name="ten_answer_third">Now I cry all the time</string>
-    <string name="ten_answer_fourth">I used to be able to cry, but now I can\'t even if I want to</string>
+    <string name="ten_answer_fourth">I used to be able to cry, but now I can\\\'t even if I want to</string>
 
     <!-- TEST eleven -->
     <string name="eleven_answer_first">I am no more irritable than usual</string>
@@ -133,10 +135,15 @@
     <string name="twenty_answer_fourth">I have completely lost my sexual interest.</string>
 
     <!-- Conclusions -->
-    <string name="twenty_thirty">no depressive symptoms</string>
-    <string name="thirtyone_thirtyeight">mild depression</string>
-    <string name="thirtynine_fifty">moderate depression</string>
-    <string name="fifty_sixtythree">severe moderate depression</string>
-    <string name="sixtythree_eighteen">severe depression</string>
+    <string name="twenty_thirty">Stage 1: Absence of Depressive Symptoms - Individuals in this stage are not experiencing any depressive symptoms. They may be feeling positive, energetic, and motivated. Recommended actions include maintaining a healthy lifestyle, developing positive coping strategies, and engaging in activities that promote a sense of well-being.</string>
+    <string name="thirtyone_thirtyeight">Stage 2: Moderate Depression - At this stage, individuals may experience a decrease in appetite, difficulty sleeping, and may withdraw from social activities. They may also have negative thoughts and feelings of hopelessness. Recommended action: Encourage the user to seek professional help and consider using cognitive-behavioral therapy (CBT) techniques through the app.</string>
+    <string name="thirtynine_fifty">Stage 3: Moderate Depression - Individuals in this stage experience more significant symptoms of depression, such as difficulty sleeping, changes in appetite, and feelings of worthlessness. Recommended actions include seeking professional help, such as therapy or medication, developing a strong support system, and practicing self-compassion.</string>
+    <string name="fifty_sixtythree">Stage 4: Moderate to Severe Depression - Individuals in this stage experience severe symptoms of depression, such as persistent sadness, insomnia, and suicidal thoughts. Recommended actions include seeking professional help immediately, practicing self-care behaviors like regular exercise and healthy eating, and developing a strong support system.</string>
+    <string name="sixtythree_eighteen">Stage 5: Severe Depression - Individuals in this stage experience the most severe symptoms of depression, such as intense feelings of despair, loss of appetite, and difficulty functioning. Recommended actions include seeking immediate professional help, such as hospitalization or intensive outpatient treatment, practicing self-care behaviors like getting enough sleep and eating well, and engaging in activities that provide a sense of pleasure or accomplishment.</string>
+    <string name="take_a_test">take a test</string>
+    <string name="intro_description">Welcome! This app is designed to help you assess your symptoms of depression in a quick and easy way. Our depression test can be a useful tool to help you understand your emotional state but it cannot replace a specialist!</string>
+    <string name="question">Choose the statement that is best suited to you</string>
+    <string name="home">home</string>
+    <string name="points">%d/%d \npoints</string>
 
 </resources>

@@ -25,7 +25,7 @@ class IntroFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
+        binding.btnStart.setOnClickListener {
             findNavController().navigate(R.id.action_introFragment_to_testFragment)
         }
     }
