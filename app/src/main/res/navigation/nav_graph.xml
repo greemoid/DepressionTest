@@ -30,5 +30,8 @@
         <argument
             android:name="sum"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_conclusionFragment_to_introFragment"
+            app:destination="@id/introFragment" />
     </fragment>
 </navigation>

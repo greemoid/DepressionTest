@@ -132,4 +132,11 @@
     <string name="twenty_answer_third">I am significantly less interested in sexual problems than before.</string>
     <string name="twenty_answer_fourth">I have completely lost my sexual interest.</string>
 
+    <!-- Conclusions -->
+    <string name="twenty_thirty">no depressive symptoms</string>
+    <string name="thirtyone_thirtyeight">mild depression</string>
+    <string name="thirtynine_fifty">moderate depression</string>
+    <string name="fifty_sixtythree">severe moderate depression</string>
+    <string name="sixtythree_eighteen">severe depression</string>
+
 </resources>

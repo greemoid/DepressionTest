@@ -170,12 +170,14 @@ class TestFragment : Fragment() {
 
         // Set up the initial model
         setModel(testModels[currentModelIndex])
-        binding.textviewFirst.text = "${currentModelIndex + 2} / ${testModels.size}"
+        binding.textviewFirst.text = "${currentModelIndex + 1} / ${testModels.size}"
 
         binding.buttonFirst.setOnClickListener {
             binding.apply {
 
-                textviewFirst.text = "${currentModelIndex + 2} / ${testModels.size}"
+                val checked =
+                    rbFirst.isChecked || rbSecond.isChecked || rbThird.isChecked || rbFourth.isChecked
+
 
                 when (rbGroup.checkedRadioButtonId) {
                     R.id.rb_first -> {
@@ -197,14 +199,21 @@ class TestFragment : Fragment() {
                 }
 
                 // switch to the next model or finish the test
-                if (currentModelIndex < testModels.size - 1) {
-                    currentModelIndex++
-                    binding.buttonFirst.text = "Next"
-                    setModel(testModels[currentModelIndex])
+                if (checked) {
+                    if (currentModelIndex < testModels.size - 1) {
+                        currentModelIndex++
+                        binding.buttonFirst.text = "Next"
+                        textviewFirst.text = "${currentModelIndex + 1} / ${testModels.size}"
+                        setModel(testModels[currentModelIndex])
+                    } else {
+                        finishTest()
+                        binding.buttonFirst.text = "Finish"
+                    }
                 } else {
-                    finishTest()
-                    binding.buttonFirst.text = "Finish"
+                    Toast.makeText(requireContext(), "Check something", Toast.LENGTH_SHORT).show()
                 }
+
+
             }
         }
     }
@@ -224,7 +233,9 @@ class TestFragment : Fragment() {
     private fun finishTest() {
         // perform the necessary actions to finish the test and show the results
         binding.buttonFirst.setOnClickListener {
-            val bundle = Bundle().putSerializable("sum", sum)
+            val bundle = Bundle().apply {
+                putInt("sum", sum)
+            }
             findNavController().navigate(R.id.action_testFragment_to_conclusionFragment, bundle)
         }
     }
