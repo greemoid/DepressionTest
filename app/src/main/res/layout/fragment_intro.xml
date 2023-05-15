@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
+    android:background="@drawable/gradient_background"
     tools:context=".IntroFragment">
+
+    <!--todo to change color of text-->
 
     <TextView
         android:id="@+id/title_text"
@@ -38,11 +40,10 @@
         android:id="@+id/next_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#2196F3"
         android:textColor="#ffffff"
         android:visibility="visible"
         android:background="@drawable/my_button_background"
-        android:text="Next"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +55,6 @@
         android:id="@+id/btn_start"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#2196F3"
         android:textColor="#ffffff"
         android:visibility="gone"
         android:background="@drawable/my_button_background"

@@ -5,7 +5,7 @@
     android:id="@+id/radio_group"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/gradient_background"
     tools:context=".TestFragment">
 
     <TextView
@@ -23,32 +23,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
-        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="#ffffff"
+        android:visibility="visible"
+        android:background="@drawable/my_button_background"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_finish"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:text="@string/finish"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.8"
+        android:layout_marginBottom="64dp"/>
 
     <RadioGroup
         android:id="@+id/rb_group"
@@ -57,32 +45,37 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_question">
+        app:layout_constraintTop_toBottomOf="@+id/tv_question"
+        app:layout_constraintVertical_bias="0.060000002">
+
+        <!--todo bigger text-->
 
         <RadioButton
             android:id="@+id/rb_first"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
             android:layout_marginBottom="8dp" />
 
         <RadioButton
             android:id="@+id/rb_second"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
             android:layout_marginBottom="8dp" />
 
         <RadioButton
             android:id="@+id/rb_third"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
             android:layout_marginBottom="8dp" />
 
         <RadioButton
             android:id="@+id/rb_fourth"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="64dp"
+            android:layout_marginBottom="64dp"/>
     </RadioGroup>
 
     <TextView

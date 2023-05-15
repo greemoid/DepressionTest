@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.navigation.fragment.findNavController
 import com.example.depressiontest.databinding.FragmentTestBinding
 import com.google.android.material.snackbar.Snackbar
@@ -172,6 +173,7 @@ class TestFragment : Fragment() {
         )//"${currentModelIndex + 1} / ${testModels.size}"
 
 
+        startAnimation()
         binding.btnNext.setOnClickListener {
             currentModelIndex++
             binding.apply {
@@ -203,7 +205,7 @@ class TestFragment : Fragment() {
                 if (checked) {
                     if (currentModelIndex < testModels.size - 1) {
                         // If there are more questions, move to the next one
-                        //binding.btnNext.text = requireContext().getString(R.string.next)
+                        startAnimation()
                         tvNumber.text = requireContext().getString(
                             R.string.number,
                             currentModelIndex + 1,
@@ -213,13 +215,13 @@ class TestFragment : Fragment() {
                     } else {
                         // If this is the last question, finish the test
                         setModel(testModels[currentModelIndex])
+                        startAnimation()
                         tvNumber.text = requireContext().getString(
                             R.string.number,
                             currentModelIndex + 1,
                             testModels.size
                         )
-                        binding.btnNext.visibility = View.GONE
-                        binding.btnFinish.visibility = View.VISIBLE
+                        binding.btnNext.text = requireContext().getString(R.string.finish)
                         finishTest()
                     }
                 } else {
@@ -249,11 +251,26 @@ class TestFragment : Fragment() {
     // Finish the test and show the results
     private fun finishTest() {
         // perform the necessary actions to finish the test and show the results
-        binding.btnFinish.setOnClickListener {
+        binding.btnNext.setOnClickListener {
+
             val bundle = Bundle().apply {
                 putInt("sum", sum)
             }
             findNavController().navigate(R.id.action_testFragment_to_conclusionFragment, bundle)
+        }
+    }
+
+    private fun startAnimation() {
+        val animFirst = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+        val animSecond = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+        val animThird = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+        val animFourth = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+
+        binding.apply {
+            rbFirst.startAnimation(animFirst)
+            rbSecond.startAnimation(animSecond)
+            rbThird.startAnimation(animThird)
+            rbFourth.startAnimation(animFourth)
         }
     }
 
