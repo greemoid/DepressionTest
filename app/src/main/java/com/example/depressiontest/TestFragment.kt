@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.depressiontest.databinding.FragmentTestBinding
 import com.google.android.material.snackbar.Snackbar
@@ -35,12 +34,12 @@ class TestFragment : Fragment() {
 
 
     private var currentModelIndex = 0
-    var sum = 0
+    private var sum = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val testModels = listOf<Item>(
+        val testModels = listOf(
             Item(
                 Pair(1, requireContext().getString(R.string.one_answer_first)),
                 Pair(2, requireContext().getString(R.string.one_answer_second)),
@@ -160,16 +159,21 @@ class TestFragment : Fragment() {
                 Pair(2, requireContext().getString(R.string.twenty_answer_second)),
                 Pair(3, requireContext().getString(R.string.twenty_answer_third)),
                 Pair(4, requireContext().getString(R.string.twenty_answer_fourth))
-            ),
+            )
         )
 
 
         // Set up the initial model
         setModel(testModels[currentModelIndex])
-        binding.tvNumber.text = requireContext().getString(R.string.number, currentModelIndex + 1, testModels.size)//"${currentModelIndex + 1} / ${testModels.size}"
+        binding.tvNumber.text = requireContext().getString(
+            R.string.number,
+            currentModelIndex + 1,
+            testModels.size
+        )//"${currentModelIndex + 1} / ${testModels.size}"
 
 
         binding.btnNext.setOnClickListener {
+            currentModelIndex++
             binding.apply {
 
                 val checked =
@@ -199,14 +203,24 @@ class TestFragment : Fragment() {
                 if (checked) {
                     if (currentModelIndex < testModels.size - 1) {
                         // If there are more questions, move to the next one
-                        currentModelIndex++
-                        binding.btnNext.text = requireContext().getString(R.string.next)
-                        tvNumber.text = requireContext().getString(R.string.number, currentModelIndex + 1, testModels.size)//"${currentModelIndex + 1} / ${testModels.size}"
+                        //binding.btnNext.text = requireContext().getString(R.string.next)
+                        tvNumber.text = requireContext().getString(
+                            R.string.number,
+                            currentModelIndex + 1,
+                            testModels.size
+                        )
                         setModel(testModels[currentModelIndex])
                     } else {
                         // If this is the last question, finish the test
+                        setModel(testModels[currentModelIndex])
+                        tvNumber.text = requireContext().getString(
+                            R.string.number,
+                            currentModelIndex + 1,
+                            testModels.size
+                        )
+                        binding.btnNext.visibility = View.GONE
+                        binding.btnFinish.visibility = View.VISIBLE
                         finishTest()
-                        binding.btnNext.text = requireContext().getString(R.string.finish)
                     }
                 } else {
                     Snackbar.make(
@@ -223,6 +237,7 @@ class TestFragment : Fragment() {
     // Sets up the UI with the current model
     private fun setModel(model: Item) {
         binding.apply {
+
             rbFirst.text = model.first.second
             rbSecond.text = model.second.second
             rbThird.text = model.third.second
@@ -234,7 +249,7 @@ class TestFragment : Fragment() {
     // Finish the test and show the results
     private fun finishTest() {
         // perform the necessary actions to finish the test and show the results
-        binding.btnNext.setOnClickListener {
+        binding.btnFinish.setOnClickListener {
             val bundle = Bundle().apply {
                 putInt("sum", sum)
             }
