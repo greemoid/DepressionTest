@@ -15,18 +15,14 @@ class IntroFragment : Fragment() {
     private var _binding: FragmentIntroBinding? = null
     private val binding get() = _binding!!
 
-    // todo to move it to strings.xml
-    private val titles = arrayOf(
-        "Welcome!",
-        "What can this app do for you?",
-        "Remember"
-    )
+    private lateinit var titles: Array<String>
+    private lateinit var descriptions: Array<String>
 
-    private val descriptions = arrayOf(
+    /*private val descriptions = arrayOf(
         "This app is designed to help you assess your symptoms of depression in a quick and easy way. Our depression test can be a useful tool to help you understand your emotional state but it cannot replace a specialist!",
         "- Assess your symptoms of depression\n- Provide a quick and easy way to understand your emotional state\n- Help you identify when you should seek professional help",
         "Remember, this app is not a substitute for professional help. If you are experiencing symptoms of depression, it's important to talk to a mental health professional."
-    )
+    )*/
 
     private var currentIndex = 0
 
@@ -40,9 +36,15 @@ class IntroFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        titles = resources.getStringArray(R.array.intro_titles)
+        descriptions = resources.getStringArray(R.array.intro_descriptions)
+
         // Set initial text+anim
         startAnimation()
         updateView()
+
+
 
         // Set "Next" button click listener
         binding.nextButton.setOnClickListener {

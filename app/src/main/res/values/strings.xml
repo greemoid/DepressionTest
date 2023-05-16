@@ -11,8 +11,20 @@
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <!--INTRO-->
+    <string-array name="intro_titles">
+        <item>Welcome!</item>
+        <item>What can this app do for you?</item>
+        <item>Remember</item>
+    </string-array>
+
+    <string-array name="intro_descriptions">
+        <item>This app is designed to help you assess your symptoms of depression in a quick and easy way. Our depression test can be a useful tool to help you understand your emotional state but it cannot replace a specialist!</item>
+        <item>- Assess your symptoms of depression\n- Provide a quick and easy way to understand your emotional state\n- Help you identify when you should seek professional help</item>
+        <item>Remember, this app is not a substitute for professional help. If you are experiencing symptoms of depression, it\'s important to talk to a mental health professional.</item>
+    </string-array>
+
 
     <!-- TEST one -->
     <string name="one_answer_first">I don\'t feel upset or sad.</string>
