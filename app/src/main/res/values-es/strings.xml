@@ -91,5 +91,5 @@
     <string name="intro_description">Bienvenido. Esta aplicación está diseñada para ayudarte a evaluar tus síntomas de depresión de una forma rápida y sencilla. Nuestro test de depresión puede ser una herramienta útil para ayudarte a comprender tu estado emocional, pero no puede sustituir a un especialista.</string>
     <string name="question">Elija la declaración que mejor se adapte a usted</string>
     <string name="home">Inicio</string>
-    <string name="points">"%d/%d "</string>
+    <string name="points" formatted="false">"%d/%d "</string>
 </resources>

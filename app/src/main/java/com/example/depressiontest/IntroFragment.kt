@@ -1,11 +1,11 @@
 package com.example.depressiontest
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.depressiontest.databinding.FragmentIntroBinding
 
@@ -17,12 +17,6 @@ class IntroFragment : Fragment() {
 
     private lateinit var titles: Array<String>
     private lateinit var descriptions: Array<String>
-
-    /*private val descriptions = arrayOf(
-        "This app is designed to help you assess your symptoms of depression in a quick and easy way. Our depression test can be a useful tool to help you understand your emotional state but it cannot replace a specialist!",
-        "- Assess your symptoms of depression\n- Provide a quick and easy way to understand your emotional state\n- Help you identify when you should seek professional help",
-        "Remember, this app is not a substitute for professional help. If you are experiencing symptoms of depression, it's important to talk to a mental health professional."
-    )*/
 
     private var currentIndex = 0
 

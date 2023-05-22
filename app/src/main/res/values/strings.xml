@@ -6,7 +6,7 @@
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
     <string name="finish">Finish</string>
-    <string name="number" translatable="false">%d/%d</string>
+    <string name="number" translatable="false" formatted="false">%d/%d</string>
     <string name="previous" translatable="false">Previous</string>
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
@@ -156,6 +156,6 @@
     <string name="intro_description">Welcome! This app is designed to help you assess your symptoms of depression in a quick and easy way. Our depression test can be a useful tool to help you understand your emotional state but it cannot replace a specialist!</string>
     <string name="question">Choose the statement that is best suited to you</string>
     <string name="home">home</string>
-    <string name="points">%d/%d \npoints</string>
+    <string name="points" formatted="false">%d/%d \npoints</string>
 
 </resources>

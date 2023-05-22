@@ -26,13 +26,6 @@ class TestFragment : Fragment() {
 
     }
 
-    data class Item(
-        val first: Pair<Int, String>,
-        val second: Pair<Int, String>,
-        val third: Pair<Int, String>,
-        val fourth: Pair<Int, String>,
-    )
-
 
     private var currentModelIndex = 0
     private var sum = 0
@@ -170,7 +163,7 @@ class TestFragment : Fragment() {
             R.string.number,
             currentModelIndex + 1,
             testModels.size
-        )//"${currentModelIndex + 1} / ${testModels.size}"
+        )
 
 
         startAnimation()
@@ -273,6 +266,7 @@ class TestFragment : Fragment() {
             rbFourth.startAnimation(animFourth)
         }
     }
+
 
 
     override fun onDestroyView() {
