@@ -33,7 +33,122 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val testModels = listOf(
+
+        // Set up the initial model
+        setModel(createTests()[currentModelIndex])
+        binding.tvNumber.text = requireContext().getString(
+            R.string.number,
+            currentModelIndex + 1,
+            createTests().size
+        )
+
+
+        startAnimation()
+        binding.btnNext.setOnClickListener {
+            currentModelIndex++
+            binding.apply {
+
+                val checked =
+                    rbFirst.isChecked || rbSecond.isChecked || rbThird.isChecked || rbFourth.isChecked
+
+
+                when (rbGroup.checkedRadioButtonId) {
+                    R.id.rb_first -> {
+                        rbFirst.text = createTests()[currentModelIndex].first.second
+                        sum += 1
+                    }
+
+                    R.id.rb_second -> {
+                        rbSecond.text = createTests()[currentModelIndex].second.second
+                        sum += 2
+                    }
+
+                    R.id.rb_third -> {
+                        rbThird.text = createTests()[currentModelIndex].third.second
+                        sum += 3
+                    }
+
+                    R.id.rb_fourth -> {
+                        rbFourth.text = createTests()[currentModelIndex].fourth.second
+                        sum += 4
+                    }
+                }
+
+                // switch to the next model or finish the test
+                if (checked) {
+                    if (currentModelIndex < createTests().size - 1) {
+                        // If there are more questions, move to the next one
+                        startAnimation()
+                        tvNumber.text = requireContext().getString(
+                            R.string.number,
+                            currentModelIndex + 1,
+                            createTests().size
+                        )
+                        setModel(createTests()[currentModelIndex])
+                    } else {
+                        // If this is the last question, finish the test
+                        setModel(createTests()[currentModelIndex])
+                        startAnimation()
+                        tvNumber.text = requireContext().getString(
+                            R.string.number,
+                            currentModelIndex + 1,
+                            createTests().size
+                        )
+                        binding.btnNext.text = requireContext().getString(R.string.finish)
+                        finishTest()
+                    }
+                } else {
+                    Snackbar.make(
+                        requireContext(),
+                        requireView(),
+                        "You have not selected anything",
+                        Snackbar.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+    }
+
+    // Sets up the UI with the current model
+    private fun setModel(model: Item) {
+        binding.apply {
+
+            rbFirst.text = model.first.second
+            rbSecond.text = model.second.second
+            rbThird.text = model.third.second
+            rbFourth.text = model.fourth.second
+            rbGroup.clearCheck()
+        }
+    }
+
+    // Finish the test and show the results
+    private fun finishTest() {
+        // perform the necessary actions to finish the test and show the results
+        binding.btnNext.setOnClickListener {
+
+            val bundle = Bundle().apply {
+                putInt("sum", sum)
+            }
+            findNavController().navigate(R.id.action_testFragment_to_conclusionFragment, bundle)
+        }
+    }
+
+    private fun startAnimation() {
+        val animFirst = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+        val animSecond = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+        val animThird = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+        val animFourth = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
+
+        binding.apply {
+            rbFirst.startAnimation(animFirst)
+            rbSecond.startAnimation(animSecond)
+            rbThird.startAnimation(animThird)
+            rbFourth.startAnimation(animFourth)
+        }
+    }
+
+    fun createTests(): List<Item> {
+        return listOf(
             Item(
                 Pair(1, requireContext().getString(R.string.one_answer_first)),
                 Pair(2, requireContext().getString(R.string.one_answer_second)),
@@ -155,119 +270,7 @@ class TestFragment : Fragment() {
                 Pair(4, requireContext().getString(R.string.twenty_answer_fourth))
             )
         )
-
-
-        // Set up the initial model
-        setModel(testModels[currentModelIndex])
-        binding.tvNumber.text = requireContext().getString(
-            R.string.number,
-            currentModelIndex + 1,
-            testModels.size
-        )
-
-
-        startAnimation()
-        binding.btnNext.setOnClickListener {
-            currentModelIndex++
-            binding.apply {
-
-                val checked =
-                    rbFirst.isChecked || rbSecond.isChecked || rbThird.isChecked || rbFourth.isChecked
-
-
-                when (rbGroup.checkedRadioButtonId) {
-                    R.id.rb_first -> {
-                        rbFirst.text = testModels[currentModelIndex].first.second
-                        sum += 1
-                    }
-                    R.id.rb_second -> {
-                        rbSecond.text = testModels[currentModelIndex].second.second
-                        sum += 2
-                    }
-                    R.id.rb_third -> {
-                        rbThird.text = testModels[currentModelIndex].third.second
-                        sum += 3
-                    }
-                    R.id.rb_fourth -> {
-                        rbFourth.text = testModels[currentModelIndex].fourth.second
-                        sum += 4
-                    }
-                }
-
-                // switch to the next model or finish the test
-                if (checked) {
-                    if (currentModelIndex < testModels.size - 1) {
-                        // If there are more questions, move to the next one
-                        startAnimation()
-                        tvNumber.text = requireContext().getString(
-                            R.string.number,
-                            currentModelIndex + 1,
-                            testModels.size
-                        )
-                        setModel(testModels[currentModelIndex])
-                    } else {
-                        // If this is the last question, finish the test
-                        setModel(testModels[currentModelIndex])
-                        startAnimation()
-                        tvNumber.text = requireContext().getString(
-                            R.string.number,
-                            currentModelIndex + 1,
-                            testModels.size
-                        )
-                        binding.btnNext.text = requireContext().getString(R.string.finish)
-                        finishTest()
-                    }
-                } else {
-                    Snackbar.make(
-                        requireContext(),
-                        requireView(),
-                        "You have not selected anything",
-                        Snackbar.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        }
     }
-
-    // Sets up the UI with the current model
-    private fun setModel(model: Item) {
-        binding.apply {
-
-            rbFirst.text = model.first.second
-            rbSecond.text = model.second.second
-            rbThird.text = model.third.second
-            rbFourth.text = model.fourth.second
-            rbGroup.clearCheck()
-        }
-    }
-
-    // Finish the test and show the results
-    private fun finishTest() {
-        // perform the necessary actions to finish the test and show the results
-        binding.btnNext.setOnClickListener {
-
-            val bundle = Bundle().apply {
-                putInt("sum", sum)
-            }
-            findNavController().navigate(R.id.action_testFragment_to_conclusionFragment, bundle)
-        }
-    }
-
-    private fun startAnimation() {
-        val animFirst = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
-        val animSecond = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
-        val animThird = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
-        val animFourth = AnimationUtils.loadAnimation(requireContext(), R.anim.text_fade_in)
-
-        binding.apply {
-            rbFirst.startAnimation(animFirst)
-            rbSecond.startAnimation(animSecond)
-            rbThird.startAnimation(animThird)
-            rbFourth.startAnimation(animFourth)
-        }
-    }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()
